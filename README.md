@@ -4,8 +4,8 @@ OSOK (COPD) erta aniqlash, yoʻllanma va spirometriya talqinini qoʻllab-quvvatl
 Oʻzbekiston birlamchi tibbiyot boʻgʻini uchun. **Tashxis qoʻymaydi**: har bir natija
 "spirometriya / pulmonolog koʻrigi zarurligi ehtimoli" sifatida beriladi, tashxisni shifokor tasdiqlaydi.
 
-Bu PlagiatX'dan **mustaqil loyiha** (oʻz package.json, Docker, nginx bloki, bazasi). Hozircha
-`PlagiatX` repo ichidagi `nafasnazorat/` papkasida turibdi; alohida repo'ga koʻchirish — `deploy/README.md`.
+Bu PlagiatX'dan **mustaqil loyiha** (oʻz repo'si, Docker, nginx bloki, bazasi); plagiatx.uz bilan
+bitta serverda alohida sayt sifatida ishlaydi — `deploy/README.md`.
 
 ## Imkoniyatlar (MVP)
 
