@@ -1,0 +1,552 @@
+{
+  "app": {
+    "name": "NafasNazorat",
+    "tagline": "OSOK erta aniqlash va spirometriya talqini",
+    "fullTitle": "NafasNazorat — OSOK erta aniqlash va spirometriya talqini platformasi"
+  },
+  "common": {
+    "save": "Saqlash",
+    "saving": "Saqlanmoqda…",
+    "cancel": "Bekor qilish",
+    "back": "Orqaga",
+    "next": "Keyingisi",
+    "edit": "Tahrirlash",
+    "close": "Yopish",
+    "loading": "Yuklanmoqda…",
+    "optional": "ixtiyoriy",
+    "yes": "Ha",
+    "no": "Yoʻq",
+    "retry": "Qayta urinish",
+    "search": "Qidirish",
+    "all": "Hammasi",
+    "notRecorded": "Kiritilmagan",
+    "years": "yil",
+    "yearsOld": "{age} yosh",
+    "cm": "sm",
+    "kg": "kg",
+    "liters": "L",
+    "percent": "%",
+    "view": "Koʻrish",
+    "today": "Bugun",
+    "date": "Sana",
+    "unknownError": "Kutilmagan xatolik yuz berdi. Iltimos, qayta urinib koʻring.",
+    "fixErrors": "Iltimos, belgilangan maydonlarni tekshiring.",
+    "required": "Majburiy maydon"
+  },
+  "sex": {
+    "male": "Erkak",
+    "female": "Ayol"
+  },
+  "roles": {
+    "doctor": "Shifokor",
+    "admin": "Administrator",
+    "patient": "Bemor",
+    "researcher": "Tadqiqotchi"
+  },
+  "nav": {
+    "main": "Asosiy menyu",
+    "dashboard": "Bemorlar paneli",
+    "newAssessment": "Xavfni baholash",
+    "spirometry": "Spirometriya talqini",
+    "newPatient": "Yangi bemor",
+    "admin": "Boshqaruv",
+    "designSystem": "Dizayn tizimi",
+    "logout": "Chiqish",
+    "openMenu": "Menyuni ochish",
+    "signedInAs": "Tizimda: {name}",
+    "skipToContent": "Asosiy mazmunga oʻtish",
+    "login": "Tizimga kirish",
+    "home": "Bosh sahifa"
+  },
+  "safety": {
+    "title": "Bu vosita tashxis qoʻymaydi",
+    "body": "NafasNazorat skrining va talqinni qoʻllab-quvvatlaydi. Natija — spirometriya yoki pulmonolog koʻrigi zarurligi ehtimoli. Tashxisni faqat shifokor klinik maʼlumotlar asosida tasdiqlaydi.",
+    "short": "Qaror qabul qilishni qoʻllab-quvvatlash vositasi · tashxis emas · tashxisni shifokor tasdiqlaydi",
+    "spirometryContext": "Koʻrsatkichlar klinik kontekstda talqin qilinadi. Bu xulosa emas — shifokor tekshiruv sifatini, simptomlar va anamnezni hisobga olib qaror qiladi.",
+    "provisionalModel": "Xavf modeli vaqtinchalik (versiya {version}): ogʻirliklar hali mahalliy maʼlumotlarda tasdiqlanmagan."
+  },
+  "risk": {
+    "levels": {
+      "low": "Past",
+      "medium": "Oʻrta",
+      "high": "Yuqori"
+    },
+    "levelLong": {
+      "low": "Past ehtimollik",
+      "medium": "Oʻrta ehtimollik",
+      "high": "Yuqori ehtimollik"
+    },
+    "question": "Spirometriya / pulmonolog koʻrigi zarurligi ehtimoli",
+    "score": "Ball: {score} / {max}",
+    "why": "Nima uchun?",
+    "explanation": "{drivers} → {level}",
+    "noDrivers": "Xavf omillari va simptomlar aniqlanmadi",
+    "driverJoin": " + ",
+    "drivers": {
+      "ageYears": "yosh {value}",
+      "packYears": "{value} quti-yil chekish",
+      "packYearsUnknown": "chekish (quti-yil nomaʼlum)",
+      "biomassYears": "biomassa tutuni {value} yil",
+      "biomassYearsUnknown": "biomassa tutuni taʼsiri",
+      "occupationalYears": "kasbiy chang {value} yil",
+      "occupationalYearsUnknown": "kasbiy chang taʼsiri",
+      "chronicCough": "surunkali yoʻtal",
+      "sputum": "balgʻam ajralishi",
+      "dyspnea": "hansirash",
+      "mmrc": "mMRC {value}",
+      "catTotal": "CAT {value}"
+    },
+    "factorNames": {
+      "ageYears": "Yosh",
+      "packYears": "Chekish (quti-yil)",
+      "biomassYears": "Biomassa / uy tutuni",
+      "occupationalYears": "Kasbiy chang",
+      "chronicCough": "Surunkali yoʻtal",
+      "sputum": "Balgʻam",
+      "dyspnea": "Hansirash",
+      "mmrc": "mMRC",
+      "catTotal": "CAT"
+    },
+    "contributionTable": "Ballar taqsimoti",
+    "points": "{points} ball",
+    "rules": {
+      "title": "Qoʻllanilgan qoida",
+      "symptomaticWithExposure": "Yosh ≥ 40, xavf omili taʼsiri va simptomlar (mMRC ≥ 2 yoki CAT ≥ 10) — GOLD boʻyicha spirometriya koʻrsatilgan.",
+      "heavyExposureOver40": "Yosh ≥ 40 va kuchli taʼsir (≥ 20 quti-yil yoki ≥ 20 yil biomassa / kasbiy chang) — kamida oʻrta daraja."
+    },
+    "missing": {
+      "title": "Baʼzi maʼlumotlar kiritilmagan",
+      "body": "Kiritilmagan maʼlumotlar 0 ball deb hisoblandi — natija xavfni kamaytirib koʻrsatishi mumkin: {fields}."
+    },
+    "recommendation": {
+      "title": "Tavsiya",
+      "routineFollowUp": {
+        "title": "Hozircha yoʻllanma shart emas",
+        "body": "Keyingi rejali koʻrikda yoki simptomlar paydo boʻlsa / kuchaysa qayta baholang. Chekishni tashlash va xavf omillarini kamaytirish boʻyicha maslahat bering."
+      },
+      "spirometry": {
+        "title": "Spirometriyaga yoʻllang",
+        "body": "Bronxodilatatordan keyingi spirometriya tavsiya etiladi. Natijani shu tizimga kiritib talqin qiling."
+      },
+      "spirometryPriorityPulmonology": {
+        "title": "Ustuvor spirometriya va pulmonolog koʻrigi",
+        "body": "Spirometriyani imkon qadar tez oʻtkazing va bemorni pulmonologga yoʻllang."
+      },
+      "review": "Keyingi koʻrik: {date}",
+      "reviewInMonths": "{months} oydan keyin qayta koʻrik"
+    }
+  },
+  "referral": {
+    "title": "Yoʻllanma",
+    "status": "Yoʻllanma holati",
+    "statuses": {
+      "none": "Kerak emas",
+      "recommended": "Tavsiya etilgan",
+      "referred": "Yoʻllangan",
+      "completed": "Yakunlangan",
+      "declined": "Rad etilgan"
+    },
+    "update": "Holatni yangilash",
+    "updated": "Yoʻllanma holati yangilandi",
+    "nextReview": "Keyingi koʻrik sanasi",
+    "nextReviewUpdated": "Keyingi koʻrik sanasi saqlandi",
+    "overdue": "Muddati oʻtgan: {date}",
+    "dueSoon": "Yaqinlashmoqda: {date}",
+    "noReview": "Belgilanmagan",
+    "note": "Izoh",
+    "noteHint": "Masalan: qaysi muassasaga yoʻllandi. Shaxsiy maʼlumot yozmang."
+  },
+  "assessment": {
+    "title": "Xavfni baholash",
+    "subtitle": "OSOK ehtimolini aniqlash: spirometriya kerakmi?",
+    "stepperLabel": "Baholash bosqichlari",
+    "stepOf": "{current}-qadam / {total}",
+    "steps": {
+      "patient": "Bemor",
+      "exposures": "Xavf omillari",
+      "symptoms": "Simptomlar",
+      "scores": "mMRC va CAT",
+      "result": "Natija"
+    },
+    "patient": {
+      "title": "Bemor va demografik maʼlumotlar",
+      "description": "Yosh va boʻy natijaga taʼsir qiladi. Ism faqat bemor kartasida koʻrinadi va tadqiqot eksportiga chiqmaydi.",
+      "existing": "Bemor",
+      "change": "Boshqa bemor",
+      "fullName": "F.I.Sh.",
+      "fullNamePlaceholder": "Masalan: Karimova Dilnoza",
+      "birthDate": "Tugʻilgan sana",
+      "age": "Yosh",
+      "sex": "Jins",
+      "height": "Boʻy",
+      "weight": "Vazn",
+      "phone": "Telefon",
+      "phonePlaceholder": "+998 90 123 45 67",
+      "consent": "Bemor anonimlashtirilgan maʼlumotlarini tadqiqotda ishlatishga rozilik berdi",
+      "consentHint": "Rozilik boʻlmasa, bemor maʼlumotlari tadqiqot eksportiga hech qachon kirmaydi."
+    },
+    "exposures": {
+      "title": "Xavf omillari taʼsiri",
+      "description": "GOLD boʻyicha asosiy xavf omillari: tamaki tutuni, biomassa yoqilgʻisi tutuni va kasbiy chang / gazlar.",
+      "smokingStatus": "Chekish",
+      "smoking": {
+        "never": "Hech qachon chekmagan",
+        "former": "Avval chekkan",
+        "current": "Hozir chekadi"
+      },
+      "cigarettesPerDay": "Kuniga sigaretlar soni",
+      "yearsSmoked": "Necha yil chekkan",
+      "packYears": "Quti-yil",
+      "packYearsComputed": "Hisoblandi: {value} quti-yil",
+      "packYearsHint": "Quti-yil = (kuniga sigaret ÷ 20) × yillar. Nos va kalyan alohida hisoblanmaydi — izohda qayd eting.",
+      "biomass": "Biomassa yoki uy ichidagi tutun",
+      "biomassHint": "Tezak, oʻtin, koʻmir bilan ovqat pishirish yoki isitish (tandir, oʻchoq, pechka).",
+      "biomassYears": "Necha yil",
+      "occupational": "Kasbiy chang, tutun yoki gazlar",
+      "occupationalHint": "Paxta tozalash, togʻ-kon, qurilish, tekstil, payvandlash, qishloq xoʻjaligi kimyoviy moddalari.",
+      "occupationalYears": "Necha yil"
+    },
+    "symptoms": {
+      "title": "Simptomlar",
+      "description": "Oxirgi 3 oy ichidagi doimiy belgilar.",
+      "chronicCough": "Surunkali yoʻtal",
+      "chronicCoughHint": "Yil davomida kamida 3 oy, koʻpincha ertalab.",
+      "sputum": "Balgʻam ajralishi",
+      "sputumHint": "Muntazam balgʻam (shamollashdan tashqari).",
+      "dyspnea": "Hansirash",
+      "dyspneaHint": "Jismoniy zoʻriqishda nafas qisishi, vaqt oʻtishi bilan kuchayadi."
+    },
+    "scores": {
+      "title": "Standart shkalalar",
+      "description": "mMRC — hansirash darajasi. CAT — OSOKning hayotga taʼsiri (8 savol, 0–5).",
+      "mmrc": "mMRC hansirash shkalasi",
+      "mmrcOptions": {
+        "0": "Faqat ogʻir jismoniy zoʻriqishda hansirayman",
+        "1": "Tez yurganda yoki biroz qiyalikka chiqqanda hansirayman",
+        "2": "Hansirash tufayli tengdoshlarimdan sekin yuraman yoki oʻz surʼatimda yurganda toʻxtab nafas olaman",
+        "3": "Taxminan 100 metr yoki bir necha daqiqa tekis yurgandan keyin toʻxtab nafas olaman",
+        "4": "Uydan chiqa olmayman yoki kiyinish / yechinishda hansirayman"
+      },
+      "cat": "CAT (COPD Assessment Test)",
+      "catTotal": "CAT jami: {total} / 40",
+      "catAnswered": "{answered} / 8 savolga javob berildi",
+      "catLicenseNote": "Klinik foydalanishdan oldin CAT savollarining rasmiy litsenziyalangan oʻzbekcha tarjimasi bilan almashtirilishi kerak.",
+      "catItems": {
+        "cough": { "left": "Men umuman yoʻtalmayman", "right": "Men doim yoʻtalaman" },
+        "phlegm": { "left": "Koʻkragimda umuman balgʻam yoʻq", "right": "Koʻkragim butunlay balgʻamga toʻla" },
+        "chestTightness": { "left": "Koʻkragimda siqilish sezmayman", "right": "Koʻkragimda kuchli siqilish bor" },
+        "breathlessness": { "left": "Qiyalik yoki bir qavat zinaga chiqqanda hansiramayman", "right": "Qiyalik yoki bir qavat zinaga chiqqanda juda hansirayman" },
+        "activities": { "left": "Uydagi ishlarda cheklanmayman", "right": "Uydagi ishlarda juda cheklanaman" },
+        "confidence": { "left": "Oʻpka kasalligimga qaramay uydan bemalol chiqaman", "right": "Oʻpka kasalligim tufayli uydan chiqishga umuman ishonchim yoʻq" },
+        "sleep": { "left": "Qattiq uxlayman", "right": "Oʻpka kasalligim tufayli yaxshi uxlay olmayman" },
+        "energy": { "left": "Juda baquvvatman", "right": "Umuman quvvatim yoʻq" }
+      },
+      "catItemLabel": "{index}-savol"
+    },
+    "result": {
+      "title": "Natija",
+      "saveAndFinish": "Saqlash va bemor kartasiga oʻtish",
+      "saved": "Baholash saqlandi",
+      "editAnswers": "Javoblarni tahrirlash",
+      "contributions": "Har bir omil hissasi"
+    },
+    "errors": {
+      "ageRange": "Yosh 18 dan 95 gacha boʻlishi kerak",
+      "heightRange": "Boʻy 120–220 sm oraligʻida boʻlishi kerak",
+      "weightRange": "Vazn 25–250 kg oraligʻida boʻlishi kerak",
+      "nameRequired": "F.I.Sh. kiriting (kamida 3 belgi)",
+      "birthDateInvalid": "Tugʻilgan sanani toʻgʻri kiriting",
+      "sexRequired": "Jinsni tanlang",
+      "smokingRequired": "Chekish holatini tanlang",
+      "cigarettesRange": "0–100 oraligʻida kiriting",
+      "yearsRange": "0–80 oraligʻida kiriting",
+      "yearsExceedAge": "Yillar bemor yoshidan oshmasligi kerak",
+      "answerRequired": "Javobni tanlang",
+      "mmrcRequired": "mMRC darajasini tanlang",
+      "catIncomplete": "CAT ning barcha 8 savoliga javob bering",
+      "patientNotFound": "Bemor topilmadi"
+    }
+  },
+  "spirometry": {
+    "title": "Spirometriya talqini",
+    "subtitle": "FEV1 va FVC qiymatlarini kiriting — tizim nisbat, kutilgan qiymatdan foiz va obstruksiyani hisoblaydi.",
+    "patientCard": "Bemor",
+    "noPatient": "Bemorsiz hisoblash — natija saqlanmaydi.",
+    "demographics": "Demografik maʼlumotlar",
+    "demographicsHint": "Kutilgan qiymatlar (GLI-2012) uchun yosh, jins va boʻy kerak.",
+    "testDate": "Tekshiruv sanasi",
+    "pre": "Bronxodilatatordan oldin",
+    "post": "Bronxodilatatordan keyin",
+    "postHint": "OSOKni tasdiqlash uchun bronxodilatatordan keyingi qiymatlar zarur.",
+    "fev1": "FEV1",
+    "fvc": "FVC",
+    "ratio": "FEV1/FVC",
+    "method": "Obstruksiya mezoni",
+    "methodFixed": "Qatʼiy nisbat < 0,70 (GOLD)",
+    "methodLln": "LLN — normaning pastki chegarasi (ERS/ATS)",
+    "methodToggle": "LLN mezonidan foydalanish",
+    "methodToggleHint": "Oʻchiq: GOLD qatʼiy nisbati (FEV1/FVC < 0,70). Yoqiq: GLI-2012 LLN (z < −1,645) — keksalarda ortiqcha tashxisni kamaytiradi.",
+    "interpret": "Talqin qilish",
+    "saveToPatient": "Bemor kartasiga saqlash",
+    "saved": "Spirometriya natijasi saqlandi",
+    "summary": "Talqin xulosasi",
+    "summaryEmpty": "Natija shu yerda paydo boʻladi",
+    "summaryEmptyHint": "Kamida bitta FEV1 va FVC juftligini kiriting.",
+    "predicted": "Kutilgan",
+    "lln": "LLN",
+    "pctPred": "% kutilgan",
+    "zScore": "z-skor",
+    "measured": "Oʻlchangan",
+    "basis": {
+      "post": "Bronxodilatatordan keyingi qiymatlar asosida",
+      "pre": "Faqat bronxodilatatordan oldingi qiymatlar asosida (dastlabki)"
+    },
+    "obstruction": {
+      "present": "Obstruksiya belgilari bor",
+      "absent": "Obstruksiya belgilari yoʻq",
+      "indeterminate": "Aniqlab boʻlmaydi"
+    },
+    "obstructionDetail": {
+      "present": "FEV1/FVC {ratio} — tanlangan mezondan past ({threshold}).",
+      "absent": "FEV1/FVC {ratio} — tanlangan mezondan past emas ({threshold}).",
+      "indeterminate": "Tanlangan mezon uchun maʼlumot yetarli emas."
+    },
+    "gold": "GOLD darajasi",
+    "goldGrades": {
+      "1": "GOLD 1 — yengil (FEV1 ≥ 80%)",
+      "2": "GOLD 2 — oʻrtacha (FEV1 50–79%)",
+      "3": "GOLD 3 — ogʻir (FEV1 30–49%)",
+      "4": "GOLD 4 — juda ogʻir (FEV1 < 30%)"
+    },
+    "goldShort": "GOLD {grade}",
+    "goldNotAssigned": "Belgilanmadi",
+    "ersAts": "ERS/ATS ogʻirligi (z-skor)",
+    "ersAtsLevels": {
+      "mild": "Yengil",
+      "moderate": "Oʻrtacha",
+      "severe": "Ogʻir"
+    },
+    "alternateMethod": "Boshqa mezon boʻyicha: {result}",
+    "flags": {
+      "title": "Eʼtibor bering",
+      "postBronchodilatorMissing": "Bronxodilatatordan keyingi qiymatlar kiritilmagan — natija dastlabki, GOLD darajasi belgilanmaydi.",
+      "noValidMeasurements": "Talqin uchun toʻgʻri FEV1 va FVC juftligi yoʻq.",
+      "demographicsMissing": "Yosh, jins yoki boʻy kiritilmagan — kutilgan qiymatlar, % va LLN hisoblanmadi.",
+      "outsideReferenceRange": "Bemor yoshi GLI-2012 tenglamasi oraligʻidan (3–95 yosh) tashqarida — kutilgan qiymatlar hisoblanmadi.",
+      "llnUnavailable": "LLN mezoni uchun demografik maʼlumotlar kerak — obstruksiya aniqlanmadi.",
+      "fev1ExceedsFvcPre": "Oldingi qiymatlar: FEV1 FVC dan katta boʻlishi mumkin emas — tekshiring.",
+      "fev1ExceedsFvcPost": "Keyingi qiymatlar: FEV1 FVC dan katta boʻlishi mumkin emas — tekshiring.",
+      "implausibleVolumePre": "Oldingi qiymatlar fiziologik oraliqdan tashqarida (0,1–10 L).",
+      "implausibleVolumePost": "Keyingi qiymatlar fiziologik oraliqdan tashqarida (0,1–10 L).",
+      "borderlineRatio": "FEV1/FVC chegaraviy (0,68–0,72) — takroriy tekshiruv yoki LLN mezonini koʻrib chiqing.",
+      "methodsDisagree": "Qatʼiy nisbat va LLN mezonlari turlicha natija bermoqda — klinik kontekstda baholang.",
+      "prism": "PRISm: nisbat saqlangan, lekin FEV1 < 80% — kuzatuv talab etiladi.",
+      "significantBronchodilatorResponse": "Bronxodilatatorga sezilarli javob (> 10% kutilgan qiymatdan) — astma bilan differensial tashxisni koʻrib chiqing."
+    },
+    "equation": "Tenglama: {citation}. Etnik guruh: {ethnicity}.",
+    "ethnicity": {
+      "caucasian": "Yevropoid",
+      "africanAmerican": "Afroamerikalik",
+      "northEastAsian": "Shimoli-sharqiy osiyolik",
+      "southEastAsian": "Janubi-sharqiy osiyolik",
+      "other": "Boshqa / aralash"
+    },
+    "ethnicityReview": "Oʻzbekiston aholisi uchun GLI-2012 guruhi hali klinik tasdiqlanmagan.",
+    "errors": {
+      "volumeRange": "0,1–10 L oraligʻida kiriting",
+      "pairIncomplete": "FEV1 va FVC ni birga kiriting",
+      "noPair": "Kamida bitta toʻliq FEV1 + FVC juftligini kiriting"
+    }
+  },
+  "dashboard": {
+    "title": "Bemorlar paneli",
+    "subtitle": "Xavf darajasi va yoʻllanma holati boʻyicha kuzatuv",
+    "stats": {
+      "patients": "Bemorlar",
+      "high": "Yuqori ehtimollik",
+      "overdue": "Koʻrik muddati oʻtgan",
+      "pendingReferrals": "Yoʻllanma kutilmoqda"
+    },
+    "filters": {
+      "title": "Filtrlar",
+      "risk": "Xavf darajasi",
+      "referral": "Yoʻllanma",
+      "search": "F.I.Sh. yoki ID boʻyicha qidirish",
+      "apply": "Qoʻllash",
+      "reset": "Tozalash",
+      "anyRisk": "Barcha darajalar",
+      "anyReferral": "Barcha holatlar",
+      "notAssessed": "Baholanmagan"
+    },
+    "table": {
+      "caption": "Bemorlar roʻyxati — oxirgi baholash boʻyicha",
+      "patient": "Bemor",
+      "age": "Yosh",
+      "risk": "Ehtimollik",
+      "referral": "Yoʻllanma",
+      "lastAssessment": "Oxirgi baholash",
+      "nextReview": "Keyingi koʻrik",
+      "actions": "Amallar",
+      "open": "Kartani ochish"
+    },
+    "results": "{count} ta bemor",
+    "empty": {
+      "title": "Hali bemorlar yoʻq",
+      "body": "Birinchi xavf baholashini boshlang — bemor kartasi avtomatik yaratiladi.",
+      "action": "Xavfni baholash"
+    },
+    "noMatches": {
+      "title": "Filtrlarga mos bemor topilmadi",
+      "body": "Filtrlarni oʻzgartiring yoki tozalang."
+    },
+    "error": {
+      "title": "Roʻyxatni yuklab boʻlmadi",
+      "body": "Sahifani yangilang. Muammo takrorlansa, administratorga murojaat qiling."
+    }
+  },
+  "patient": {
+    "title": "Bemor kartasi",
+    "pseudoId": "Tadqiqot ID",
+    "age": "Yosh",
+    "sex": "Jins",
+    "birthDate": "Tugʻilgan sana",
+    "phone": "Telefon",
+    "consent": "Tadqiqot roziligi",
+    "consentYes": "Rozilik bor",
+    "consentNo": "Rozilik yoʻq",
+    "newAssessment": "Yangi baholash",
+    "newSpirometry": "Spirometriya kiritish",
+    "latestRisk": "Oxirgi baholash",
+    "notAssessed": "Hali baholanmagan",
+    "notAssessedBody": "Xavfni baholashni boshlang.",
+    "riskOverTime": "Ehtimollik dinamikasi",
+    "riskOverTimeEmpty": "Dinamika uchun kamida 2 ta baholash kerak.",
+    "scoreHistory": "Shkalalar tarixi",
+    "scoreHistoryEmpty": "Hali baholash yoʻq",
+    "spirometryResults": "Spirometriya natijalari",
+    "spirometryEmpty": "Spirometriya natijalari yoʻq",
+    "spirometryEmptyBody": "Natijani kiriting — tizim nisbat va GOLD darajasini hisoblaydi.",
+    "audit": "Oʻzgarishlar tarixi",
+    "auditEmpty": "Yozuvlar yoʻq",
+    "createdBy": "Yaratgan: {name}, {date}",
+    "updatedBy": "Oxirgi oʻzgartirgan: {name}, {date}",
+    "notFound": {
+      "title": "Bemor topilmadi",
+      "body": "Bemor oʻchirilgan yoki havola notoʻgʻri.",
+      "action": "Panelga qaytish"
+    },
+    "columns": {
+      "date": "Sana",
+      "risk": "Ehtimollik",
+      "score": "Ball",
+      "mmrc": "mMRC",
+      "cat": "CAT",
+      "packYears": "Quti-yil",
+      "by": "Kiritgan",
+      "ratio": "FEV1/FVC",
+      "fev1": "FEV1 (L)",
+      "fev1Pct": "FEV1 %",
+      "obstruction": "Obstruksiya",
+      "gold": "GOLD",
+      "basis": "Asos"
+    },
+    "basisShort": {
+      "post": "BD keyin",
+      "pre": "BD oldin"
+    },
+    "chart": {
+      "label": "Xavf bali dinamikasi: har bir baholash boʻyicha ball va daraja",
+      "thresholdMedium": "Oʻrta chegara",
+      "thresholdHigh": "Yuqori chegara"
+    }
+  },
+  "audit": {
+    "actions": {
+      "create": "yaratdi",
+      "update": "oʻzgartirdi",
+      "export": "eksport qildi",
+      "login": "tizimga kirdi"
+    },
+    "entities": {
+      "patient": "bemor kartasi",
+      "assessment": "xavf baholash",
+      "spirometry": "spirometriya",
+      "referral": "yoʻllanma",
+      "user": "foydalanuvchi",
+      "researchExport": "tadqiqot eksporti"
+    },
+    "fields": "Maydonlar: {fields}",
+    "entry": "{actor} {entity}ni {action}"
+  },
+  "auth": {
+    "title": "Tizimga kirish",
+    "subtitle": "Tibbiyot xodimlari uchun",
+    "email": "Elektron pochta",
+    "password": "Parol",
+    "submit": "Kirish",
+    "submitting": "Kirilmoqda…",
+    "invalid": "Elektron pochta yoki parol notoʻgʻri.",
+    "rateLimited": "Juda koʻp urinish. {minutes} daqiqadan keyin qayta urinib koʻring.",
+    "roleNotAvailable": "Bu rol uchun interfeys hali tayyor emas.",
+    "demoHint": "Loyihani koʻrib chiqish uchun demo hisob maʼlumotlarini administratordan oling."
+  },
+  "admin": {
+    "title": "Boshqaruv",
+    "subtitle": "Foydalanuvchilar, tadqiqot eksporti va audit",
+    "users": "Foydalanuvchilar",
+    "addUser": "Foydalanuvchi qoʻshish",
+    "name": "Ism",
+    "role": "Rol",
+    "created": "Foydalanuvchi qoʻshildi",
+    "passwordHint": "Kamida 10 belgi.",
+    "emailTaken": "Bu elektron pochta band.",
+    "export": "Tadqiqot eksporti",
+    "exportBody": "Faqat rozilik bergan bemorlar. Ism, telefon va tugʻilgan sana chiqmaydi — barqaror psevdonim ID, yosh va klinik koʻrsatkichlar.",
+    "exportJson": "JSON yuklab olish",
+    "exportCsv": "CSV yuklab olish",
+    "recentAudit": "Soʻnggi harakatlar",
+    "forbidden": "Bu sahifa faqat administratorlar uchun."
+  },
+  "landing": {
+    "badge": "Oʻzbekiston birlamchi tibbiyot boʻgʻini uchun",
+    "heroTitle": "OSOKni erta aniqlang — spirometr boʻlmasa ham",
+    "heroBody": "NafasNazorat shifokor va hamshiraga 5 daqiqada bemorning xavf omillari va simptomlarini baholash, kimni spirometriyaga yoʻllash kerakligini aniqlash va spirometriya natijasini toʻgʻri talqin qilishda yordam beradi.",
+    "ctaLogin": "Tizimga kirish",
+    "ctaHow": "Qanday ishlaydi",
+    "problemTitle": "Muammo",
+    "problemBody": "Oʻpkaning surunkali obstruktiv kasalligi (OSOK) koʻpincha kech aniqlanadi. Birlamchi boʻgʻinda spirometr va tayyorlangan mutaxassis hamma joyda yoʻq, biomassa tutuni va kasbiy chang taʼsiri esa keng tarqalgan.",
+    "howTitle": "Qanday ishlaydi",
+    "how": {
+      "1": { "title": "Baholash", "body": "Yosh, chekish (quti-yil), biomassa va kasbiy chang, simptomlar, mMRC va CAT — bosqichma-bosqich." },
+      "2": { "title": "Tushunarli natija", "body": "Past / Oʻrta / Yuqori ehtimollik — sabablari bilan: masalan, «40 quti-yil + mMRC 3 → yuqori»." },
+      "3": { "title": "Yoʻllanma va kuzatuv", "body": "Spirometriya yoki pulmonologga yoʻllash tavsiyasi, keyingi koʻrik eslatmasi, bemor kartasida dinamika." }
+    },
+    "featuresTitle": "Imkoniyatlar",
+    "features": {
+      "risk": { "title": "Xavfni baholash", "body": "GOLD koʻrsatkichlariga asoslangan, sozlanadigan va tushuntiriladigan model." },
+      "spiro": { "title": "Spirometriya talqini", "body": "FEV1/FVC, GLI-2012 boʻyicha % kutilgan, LLN, GOLD 1–4 darajasi." },
+      "dashboard": { "title": "Bemorlar paneli", "body": "Xavf darajasi va yoʻllanma holati boʻyicha filtr, muddati oʻtgan koʻriklar." },
+      "research": { "title": "Tadqiqotga tayyor", "body": "Rozilik asosida anonimlashtirilgan eksport — modelni mahalliy maʼlumotlarda tasdiqlash uchun." }
+    },
+    "safetyTitle": "Xavfsizlik tamoyili",
+    "safetyBody": "NafasNazorat tashxis qoʻymaydi va spirometriyani almashtirmaydi. U kimni tekshirish kerakligini aniqlashga va natijani talqin qilishga yordam beradi. Har bir xulosani shifokor tasdiqlaydi.",
+    "statusTitle": "Loyiha holati",
+    "statusBody": "MVP — pilot va klinik tasdiqlash bosqichi. Xavf modeli ogʻirliklari vaqtinchalik va mahalliy maʼlumotlarda tasdiqlanadi.",
+    "footer": "© {year} NafasNazorat · Pilot versiya · Tashxis vositasi emas"
+  },
+  "designSystem": {
+    "title": "Dizayn tizimi",
+    "subtitle": "Tokenlar va asosiy komponentlar — barcha ekranlar shulardan yigʻiladi."
+  },
+  "errors": {
+    "generic": {
+      "title": "Nimadir notoʻgʻri ketdi",
+      "body": "Maʼlumotlaringiz saqlanib qolgan boʻlishi mumkin. Sahifani qayta yuklang."
+    },
+    "notFound": {
+      "title": "Sahifa topilmadi",
+      "body": "Havola notoʻgʻri yoki sahifa oʻchirilgan."
+    },
+    "forbidden": "Bu amal uchun ruxsatingiz yoʻq."
+  }
+}
