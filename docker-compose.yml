@@ -1,0 +1,26 @@
+# NafasNazorat — standalone compose project, fully separate from PlagiatX.
+# On the server:  cd /opt/nafasnazorat && docker compose up -d --build
+name: nafasnazorat
+
+services:
+  app:
+    build: .
+    image: nafasnazorat:latest
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      NAFAS_DB_PATH: /data/nafasnazorat.db
+    # Only reachable from the host's nginx — never exposed publicly.
+    ports:
+      - "127.0.0.1:3100:3000"
+    volumes:
+      - nafas_data:/data
+    # Hard caps so it can never starve the other site on this server.
+    mem_limit: 384m
+    cpus: 1.0
+    logging:
+      driver: json-file
+      options: { max-size: "10m", max-file: "3" }
+
+volumes:
+  nafas_data:

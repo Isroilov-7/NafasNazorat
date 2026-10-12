@@ -2,7 +2,8 @@
   "app": {
     "name": "NafasNazorat",
     "tagline": "OSOK erta aniqlash va spirometriya talqini",
-    "fullTitle": "NafasNazorat — OSOK erta aniqlash va spirometriya talqini platformasi"
+    "fullTitle": "NafasNazorat — OSOK erta aniqlash va spirometriya talqini platformasi",
+    "demoBanner": "Demo rejim: barcha bemorlar toʻqima (haqiqiy emas). Pilot versiya."
   },
   "common": {
     "save": "Saqlash",
@@ -232,14 +233,38 @@
       "catAnswered": "{answered} / 8 savolga javob berildi",
       "catLicenseNote": "Klinik foydalanishdan oldin CAT savollarining rasmiy litsenziyalangan oʻzbekcha tarjimasi bilan almashtirilishi kerak.",
       "catItems": {
-        "cough": { "left": "Men umuman yoʻtalmayman", "right": "Men doim yoʻtalaman" },
-        "phlegm": { "left": "Koʻkragimda umuman balgʻam yoʻq", "right": "Koʻkragim butunlay balgʻamga toʻla" },
-        "chestTightness": { "left": "Koʻkragimda siqilish sezmayman", "right": "Koʻkragimda kuchli siqilish bor" },
-        "breathlessness": { "left": "Qiyalik yoki bir qavat zinaga chiqqanda hansiramayman", "right": "Qiyalik yoki bir qavat zinaga chiqqanda juda hansirayman" },
-        "activities": { "left": "Uydagi ishlarda cheklanmayman", "right": "Uydagi ishlarda juda cheklanaman" },
-        "confidence": { "left": "Oʻpka kasalligimga qaramay uydan bemalol chiqaman", "right": "Oʻpka kasalligim tufayli uydan chiqishga umuman ishonchim yoʻq" },
-        "sleep": { "left": "Qattiq uxlayman", "right": "Oʻpka kasalligim tufayli yaxshi uxlay olmayman" },
-        "energy": { "left": "Juda baquvvatman", "right": "Umuman quvvatim yoʻq" }
+        "cough": {
+          "left": "Men umuman yoʻtalmayman",
+          "right": "Men doim yoʻtalaman"
+        },
+        "phlegm": {
+          "left": "Koʻkragimda umuman balgʻam yoʻq",
+          "right": "Koʻkragim butunlay balgʻamga toʻla"
+        },
+        "chestTightness": {
+          "left": "Koʻkragimda siqilish sezmayman",
+          "right": "Koʻkragimda kuchli siqilish bor"
+        },
+        "breathlessness": {
+          "left": "Qiyalik yoki bir qavat zinaga chiqqanda hansiramayman",
+          "right": "Qiyalik yoki bir qavat zinaga chiqqanda juda hansirayman"
+        },
+        "activities": {
+          "left": "Uydagi ishlarda cheklanmayman",
+          "right": "Uydagi ishlarda juda cheklanaman"
+        },
+        "confidence": {
+          "left": "Oʻpka kasalligimga qaramay uydan bemalol chiqaman",
+          "right": "Oʻpka kasalligim tufayli uydan chiqishga umuman ishonchim yoʻq"
+        },
+        "sleep": {
+          "left": "Qattiq uxlayman",
+          "right": "Oʻpka kasalligim tufayli yaxshi uxlay olmayman"
+        },
+        "energy": {
+          "left": "Juda baquvvatman",
+          "right": "Umuman quvvatim yoʻq"
+        }
       },
       "catItemLabel": "{index}-savol"
     },
@@ -356,6 +381,12 @@
       "volumeRange": "0,1–10 L oraligʻida kiriting",
       "pairIncomplete": "FEV1 va FVC ni birga kiriting",
       "noPair": "Kamida bitta toʻliq FEV1 + FVC juftligini kiriting"
+    },
+    "goldNames": {
+      "1": "Yengil · FEV1 ≥ 80%",
+      "2": "Oʻrtacha · FEV1 50–79%",
+      "3": "Ogʻir · FEV1 30–49%",
+      "4": "Juda ogʻir · FEV1 < 30%"
     }
   },
   "dashboard": {
@@ -517,22 +548,45 @@
     "problemBody": "Oʻpkaning surunkali obstruktiv kasalligi (OSOK) koʻpincha kech aniqlanadi. Birlamchi boʻgʻinda spirometr va tayyorlangan mutaxassis hamma joyda yoʻq, biomassa tutuni va kasbiy chang taʼsiri esa keng tarqalgan.",
     "howTitle": "Qanday ishlaydi",
     "how": {
-      "1": { "title": "Baholash", "body": "Yosh, chekish (quti-yil), biomassa va kasbiy chang, simptomlar, mMRC va CAT — bosqichma-bosqich." },
-      "2": { "title": "Tushunarli natija", "body": "Past / Oʻrta / Yuqori ehtimollik — sabablari bilan: masalan, «40 quti-yil + mMRC 3 → yuqori»." },
-      "3": { "title": "Yoʻllanma va kuzatuv", "body": "Spirometriya yoki pulmonologga yoʻllash tavsiyasi, keyingi koʻrik eslatmasi, bemor kartasida dinamika." }
+      "1": {
+        "title": "Baholash",
+        "body": "Yosh, chekish (quti-yil), biomassa va kasbiy chang, simptomlar, mMRC va CAT — bosqichma-bosqich."
+      },
+      "2": {
+        "title": "Tushunarli natija",
+        "body": "Past / Oʻrta / Yuqori ehtimollik — sabablari bilan: masalan, «40 quti-yil + mMRC 3 → yuqori»."
+      },
+      "3": {
+        "title": "Yoʻllanma va kuzatuv",
+        "body": "Spirometriya yoki pulmonologga yoʻllash tavsiyasi, keyingi koʻrik eslatmasi, bemor kartasida dinamika."
+      }
     },
     "featuresTitle": "Imkoniyatlar",
     "features": {
-      "risk": { "title": "Xavfni baholash", "body": "GOLD koʻrsatkichlariga asoslangan, sozlanadigan va tushuntiriladigan model." },
-      "spiro": { "title": "Spirometriya talqini", "body": "FEV1/FVC, GLI-2012 boʻyicha % kutilgan, LLN, GOLD 1–4 darajasi." },
-      "dashboard": { "title": "Bemorlar paneli", "body": "Xavf darajasi va yoʻllanma holati boʻyicha filtr, muddati oʻtgan koʻriklar." },
-      "research": { "title": "Tadqiqotga tayyor", "body": "Rozilik asosida anonimlashtirilgan eksport — modelni mahalliy maʼlumotlarda tasdiqlash uchun." }
+      "risk": {
+        "title": "Xavfni baholash",
+        "body": "GOLD koʻrsatkichlariga asoslangan, sozlanadigan va tushuntiriladigan model."
+      },
+      "spiro": {
+        "title": "Spirometriya talqini",
+        "body": "FEV1/FVC, GLI-2012 boʻyicha % kutilgan, LLN, GOLD 1–4 darajasi."
+      },
+      "dashboard": {
+        "title": "Bemorlar paneli",
+        "body": "Xavf darajasi va yoʻllanma holati boʻyicha filtr, muddati oʻtgan koʻriklar."
+      },
+      "research": {
+        "title": "Tadqiqotga tayyor",
+        "body": "Rozilik asosida anonimlashtirilgan eksport — modelni mahalliy maʼlumotlarda tasdiqlash uchun."
+      }
     },
     "safetyTitle": "Xavfsizlik tamoyili",
     "safetyBody": "NafasNazorat tashxis qoʻymaydi va spirometriyani almashtirmaydi. U kimni tekshirish kerakligini aniqlashga va natijani talqin qilishga yordam beradi. Har bir xulosani shifokor tasdiqlaydi.",
     "statusTitle": "Loyiha holati",
     "statusBody": "MVP — pilot va klinik tasdiqlash bosqichi. Xavf modeli ogʻirliklari vaqtinchalik va mahalliy maʼlumotlarda tasdiqlanadi.",
-    "footer": "© {year} NafasNazorat · Pilot versiya · Tashxis vositasi emas"
+    "footer": "© {year} NafasNazorat · Pilot versiya · Tashxis vositasi emas",
+    "exampleExplanation": "40 quti-yil chekish + mMRC 3 → yuqori ehtimollik",
+    "exampleLabel": "Namuna natija (toʻqima maʼlumot)"
   },
   "designSystem": {
     "title": "Dizayn tizimi",

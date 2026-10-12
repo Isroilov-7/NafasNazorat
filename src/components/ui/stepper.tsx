@@ -62,8 +62,8 @@ export function Stepper({ steps, current, label, progressText, onStepSelect, cla
               </span>
               <span
                 className={cn(
-                  "hidden truncate text-sm lg:inline",
-                  state === "current" ? "font-semibold text-foreground" : "text-muted-foreground",
+                  "truncate text-sm",
+                  state === "current" ? "font-semibold text-foreground" : "text-muted-foreground max-xl:sr-only",
                 )}
               >
                 {step.label}
@@ -84,7 +84,6 @@ export function Stepper({ steps, current, label, progressText, onStepSelect, cla
               ) : (
                 <span className="flex min-h-11 min-w-0 items-center gap-2" aria-current={state === "current" ? "step" : undefined} title={step.label}>
                   {content}
-                  <span className="sr-only lg:hidden">{step.label}</span>
                 </span>
               )}
               {i < steps.length - 1 ? (

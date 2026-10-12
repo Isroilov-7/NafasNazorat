@@ -27,7 +27,7 @@ export function Stat({ label, value, unit, detail, emphasis = false, tone = "def
     >
       <dt className="text-sm font-medium text-muted-foreground">{label}</dt>
       <dd className="flex items-baseline gap-1.5">
-        <span className={cn("tabular text-foreground", emphasis ? "text-display" : "text-metric")}>{value}</span>
+        <span className={cn("text-foreground", emphasis ? "text-display" : "text-metric")}>{value}</span>
         {unit ? <span className="text-sm text-muted-foreground">{unit}</span> : null}
       </dd>
       {detail ? <dd className="text-sm text-muted-foreground">{detail}</dd> : null}
