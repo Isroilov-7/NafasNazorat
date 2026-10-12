@@ -58,9 +58,13 @@ fi
 systemctl reload nginx
 
 say "4/5 HTTPS sertifikati (certbot)"
+CERT_OK=0
 if command -v certbot >/dev/null; then
-  certbot --nginx -d "$DOMAIN" --non-interactive --agree-tos -m "$EMAIL" --redirect \
-    || echo "  certbot muvaffaqiyatsiz: domen DNS'i shu serverga yo'nalganini tekshirib, skriptni qayta ishga tushiring"
+  if certbot --nginx -d "$DOMAIN" --non-interactive --agree-tos -m "$EMAIL" --redirect; then
+    CERT_OK=1
+  else
+    echo "  certbot muvaffaqiyatsiz: domen DNS'i shu serverga yo'nalganini tekshirib, skriptni qayta ishga tushiring"
+  fi
 else
   echo "  certbot topilmadi: apt install -y certbot python3-certbot-nginx"
 fi
@@ -69,6 +73,11 @@ say "5/5 Kunlik backup (02:30)"
 CRON="30 2 * * * cd $ROOT && docker compose exec -T app node scripts/backup.mjs >> /var/log/nafas-backup.log 2>&1"
 ( crontab -l 2>/dev/null | grep -v 'scripts/backup.mjs' ; echo "$CRON" ) | crontab -
 
-printf '\n\033[1;32m✔ Tayyor: https://%s\033[0m\n' "$DOMAIN"
+if [[ $CERT_OK -eq 1 ]]; then
+  printf '\n\033[1;32m✔ Tayyor: https://%s\033[0m\n' "$DOMAIN"
+else
+  printf '\n\033[1;33m⚠ Ilova ishlayapti, lekin HTTPS sertifikati YO‘Q — login ishlamaydi.\033[0m\n'
+  echo "  DNS: getent hosts $DOMAIN  → server IP chiqishi kerak; keyin shu skriptni qayta ishga tushiring."
+fi
 echo "  Demo: bosh sahifadagi \"Demoni ko'rish\" tugmasi (parolsiz, faqat to'qima bemorlar)."
 echo "  Admin login: grep ADMIN $ROOT/.env"
