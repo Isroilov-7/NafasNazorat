@@ -9,7 +9,7 @@ import { NavLinks } from "@/components/app/nav-links";
 import { UserMenu } from "@/components/app/user-menu";
 import { Skeleton } from "@/components/ui/skeleton";
 import { requireClinician } from "@/lib/server/auth/dal";
-import { isDemoMode } from "@/lib/server/bootstrap";
+import { isDemoMode } from "@/lib/server/demo";
 
 /**
  * Authenticated app shell. The chrome (logo, layout) is static; everything that

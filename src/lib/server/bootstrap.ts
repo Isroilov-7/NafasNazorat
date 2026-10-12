@@ -7,6 +7,7 @@ import { assessmentPayloadSchema } from "@/lib/validation/assessment";
 import { spirometryFormSchema } from "@/lib/validation/spirometry";
 import { ageOn, todayInClinic } from "@/lib/domain/dates";
 import { hashPasswordSync } from "./auth/password";
+import { isDemoMode } from "./demo";
 import { newId, newPseudoId, nowIso } from "./ids";
 import { getDb } from "./db";
 import { countUsers, emailExists, insertUser, listUsers } from "./repositories/users";
@@ -24,7 +25,7 @@ export function bootstrap(): void {
   ensureUser("admin", "Administrator", process.env.BOOTSTRAP_ADMIN_EMAIL ?? (dev ? "admin@nafas.local" : undefined), process.env.BOOTSTRAP_ADMIN_PASSWORD, dev);
   ensureUser("doctor", "Demo shifokor", process.env.DEMO_DOCTOR_EMAIL ?? (dev ? "doctor@nafas.local" : undefined), process.env.DEMO_DOCTOR_PASSWORD, dev);
   if (countUsers() === 0) console.warn("[bootstrap] No users. Set BOOTSTRAP_ADMIN_EMAIL and BOOTSTRAP_ADMIN_PASSWORD.");
-  if (process.env.NAFAS_DEMO_DATA === "1") seedDemoData();
+  if (isDemoMode()) seedDemoData();
 }
 
 function ensureUser(role: Role, name: string, email: string | undefined, password: string | undefined, dev: boolean) {
@@ -42,8 +43,6 @@ function ensureUser(role: Role, name: string, email: string | undefined, passwor
 }
 
 /* ───────────── Demo data (fictional patients for the pilot / review site) ───────────── */
-
-export const isDemoMode = () => process.env.NAFAS_DEMO_DATA === "1";
 
 interface DemoVisit {
   daysAgo: number;

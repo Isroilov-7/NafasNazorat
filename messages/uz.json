@@ -519,7 +519,9 @@
     "invalid": "Elektron pochta yoki parol notoʻgʻri.",
     "rateLimited": "Juda koʻp urinish. {minutes} daqiqadan keyin qayta urinib koʻring.",
     "roleNotAvailable": "Bu rol uchun interfeys hali tayyor emas.",
-    "demoHint": "Loyihani koʻrib chiqish uchun demo hisob maʼlumotlarini administratordan oling."
+    "demoHint": "Loyihani koʻrib chiqish uchun demo hisob maʼlumotlarini administratordan oling.",
+    "demoButton": "Demo shifokor sifatida kirish",
+    "demoDivider": "yoki"
   },
   "admin": {
     "title": "Boshqaruv",
@@ -586,7 +588,9 @@
     "statusBody": "MVP — pilot va klinik tasdiqlash bosqichi. Xavf modeli ogʻirliklari vaqtinchalik va mahalliy maʼlumotlarda tasdiqlanadi.",
     "footer": "© {year} NafasNazorat · Pilot versiya · Tashxis vositasi emas",
     "exampleExplanation": "40 quti-yil chekish + mMRC 3 → yuqori ehtimollik",
-    "exampleLabel": "Namuna natija (toʻqima maʼlumot)"
+    "exampleLabel": "Namuna natija (toʻqima maʼlumot)",
+    "ctaDemo": "Demoni koʻrish",
+    "demoNote": "Parolsiz kirish · faqat toʻqima (haqiqiy boʻlmagan) bemorlar"
   },
   "designSystem": {
     "title": "Dizayn tizimi",

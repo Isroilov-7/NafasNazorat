@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { Suspense } from "react";
+import { DemoLoginButton } from "@/components/app/demo-login-button";
 import { Logo } from "@/components/app/logo";
 import { SafetyNotice } from "@/components/clinical/safety-notice";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -28,6 +29,9 @@ export default async function LoginPage() {
         <CardContent>
           <Suspense fallback={<FormSkeleton />}>
             <LoginForm />
+          </Suspense>
+          <Suspense fallback={null}>
+            <DemoLoginButton label="auth.demoButton" variant="outline" className="mt-5 border-t border-border pt-5" />
           </Suspense>
         </CardContent>
       </Card>

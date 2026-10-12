@@ -1,7 +1,11 @@
 import { ArrowRight, BarChart3, ClipboardList, Database, ShieldCheck, Stethoscope, Wind } from "lucide-react";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
+import { Suspense } from "react";
+import { connection } from "next/server";
+import { DemoLoginButton } from "@/components/app/demo-login-button";
 import { Logo } from "@/components/app/logo";
+import { demoDoctorEmail } from "@/lib/server/demo";
 import { RiskBadge } from "@/components/clinical/risk-badge";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -42,10 +46,16 @@ export default async function LandingPage() {
                     {t("landing.ctaLogin")} <ArrowRight />
                   </Link>
                 </Button>
+                <Suspense fallback={null}>
+                  <DemoLoginButton label="landing.ctaDemo" />
+                </Suspense>
                 <Button size="lg" variant="outline" asChild>
                   <a href="#how">{t("landing.ctaHow")}</a>
                 </Button>
               </div>
+              <Suspense fallback={null}>
+                <DemoNote />
+              </Suspense>
             </div>
             {/* Illustrative result card (static example, not patient data) */}
             <Card className="shadow-lg" aria-label={t("landing.exampleLabel")}>
@@ -139,4 +149,11 @@ export default async function LandingPage() {
       </footer>
     </div>
   );
+}
+
+async function DemoNote() {
+  await connection();
+  if (!demoDoctorEmail()) return null;
+  const t = await getTranslations("landing");
+  return <p className="text-sm text-muted-foreground">{t("demoNote")}</p>;
 }

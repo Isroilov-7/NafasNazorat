@@ -8,6 +8,8 @@ import { SESSION_COOKIE, SESSION_TTL_SECONDS, createSessionToken } from "@/lib/s
 import { writeAudit } from "@/lib/server/repositories/audit";
 import { findUserForLogin } from "@/lib/server/repositories/users";
 import { loginSchema } from "@/lib/validation/misc";
+import type { User } from "@/lib/domain/models";
+import { demoDoctorEmail } from "@/lib/server/demo";
 
 export interface LoginState {
   error: "auth.invalid" | "auth.rateLimited" | null;
@@ -43,7 +45,11 @@ export async function loginAction(_prev: LoginState, formData: FormData): Promis
     return { error: "auth.invalid", email };
   }
   clearAttempts(key);
+  await startSession(user);
+  redirect(safeNext(formData.get("next")));
+}
 
+async function startSession(user: { id: string; role: User["role"] }) {
   (await cookies()).set(SESSION_COOKIE, createSessionToken({ uid: user.id, role: user.role }), {
     httpOnly: true,
     sameSite: "lax",
@@ -52,7 +58,23 @@ export async function loginAction(_prev: LoginState, formData: FormData): Promis
     maxAge: SESSION_TTL_SECONDS,
   });
   writeAudit({ actorId: user.id, action: "login", entity: "user", entityId: user.id });
-  redirect(safeNext(formData.get("next")));
+}
+
+/**
+ * One-click login as the demo doctor, for reviewers of the prototype.
+ * Works ONLY when the site runs in demo mode with fictional data
+ * (NAFAS_DEMO_LOGIN=1 + NAFAS_DEMO_DATA=1); otherwise it is a no-op.
+ */
+export async function demoLoginAction(): Promise<void> {
+  const email = demoDoctorEmail();
+  if (!email) redirect("/login");
+  const ip = (await headers()).get("x-real-ip") ?? "local";
+  if (isRateLimited(`demo|${ip}`, 30)) redirect("/login");
+  recordAttempt(`demo|${ip}`);
+  const user = findUserForLogin(email);
+  if (!user || !user.active || user.role !== "doctor") redirect("/login");
+  await startSession(user);
+  redirect("/dashboard");
 }
 
 export async function logoutAction(): Promise<void> {
