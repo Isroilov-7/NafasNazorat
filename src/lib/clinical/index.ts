@@ -11,3 +11,4 @@ export * from "./gold";
 export * from "./spirometry";
 export * from "./riskConfig";
 export * from "./riskScore";
+export * from "./riskScale";

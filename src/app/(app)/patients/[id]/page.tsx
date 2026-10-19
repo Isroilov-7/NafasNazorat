@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
-import { RiskExplanation } from "@/components/clinical/risk-result";
+import { RiskExplanation, RiskFactorBreakdown } from "@/components/clinical/risk-result";
 import { RiskBadge } from "@/components/clinical/risk-badge";
 import { ReferralBadge, ReviewDue } from "@/components/clinical/status-badges";
 import { Badge } from "@/components/ui/badge";
@@ -105,6 +105,19 @@ export default async function PatientPage({ params }: PageProps<"/patients/[id]"
                   <p className="text-sm text-muted-foreground">
                     {t("risk.recommendation.title")}: <span className="font-medium text-foreground">{t(`risk.recommendation.${latest.risk.recommendation}.title`)}</span>
                   </p>
+                  {latest.risk.triggeredRules.length > 0 ? (
+                    <ul className="flex flex-col gap-1 text-sm text-muted-foreground">
+                      {latest.risk.triggeredRules.map((id) => (
+                        <li key={id}>
+                          {t("risk.rules.title")}: {t.has(`risk.rules.${id}` as never) ? t(`risk.rules.${id}` as never) : id}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                  <div className="mt-2 border-t border-border pt-4">
+                    <h3 className="mb-3 text-sm font-semibold">{t("assessment.result.contributions")}</h3>
+                    <RiskFactorBreakdown result={latest.risk} />
+                  </div>
                 </div>
               ) : (
                 <EmptyState
