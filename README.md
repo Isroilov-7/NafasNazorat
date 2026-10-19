@@ -15,6 +15,7 @@ bitta serverda alohida sayt sifatida ishlaydi — `deploy/README.md`.
 | Kirish (shifokor / admin) | `/login` |
 | Xavfni baholash — 5 qadamli stepper (bemor → xavf omillari → simptomlar → mMRC/CAT → natija) | `/assessments/new[?patientId=]` |
 | Spirometriya talqini (FEV1/FVC, GLI-2012 % kutilgan, LLN, GOLD 1–4, BD javobi, PRISm) | `/spirometry/new[?patientId=]` |
+| Ochiq metodika — 19 ballik shkala, xavf omillari, chegaralar, qoidalar, namuna (raqamlar `riskConfig`'dan avtomatik) | `/metodika` |
 | Bemorlar paneli — xavf / yoʻllanma filtri, muddati oʻtgan koʻriklar | `/dashboard` |
 | Bemor kartasi — dinamika grafigi, shkalalar tarixi, spirometriya, yoʻllanma, audit | `/patients/[id]` |
 | Boshqaruv — foydalanuvchilar, tadqiqot eksporti (CSV/JSON), audit | `/admin` |
@@ -73,7 +74,7 @@ qilingan; natijalar rspiro algoritmi bilan solishtirib testlangan (`__tests__/gl
 
 ```bash
 npm ci
-npm test            # 77 ta unit test (klinik modul, sana, eksport)
+npm test            # 82 ta unit test (klinik modul, sana, eksport)
 npm run typecheck && npm run lint
 npm run dev         # http://localhost:3000 — dev'da admin/doctor parollari konsolga chiqadi
 ```

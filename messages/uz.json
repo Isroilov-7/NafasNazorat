@@ -57,7 +57,8 @@
     "signedInAs": "Tizimda: {name}",
     "skipToContent": "Asosiy mazmunga oʻtish",
     "login": "Tizimga kirish",
-    "home": "Bosh sahifa"
+    "home": "Bosh sahifa",
+    "method": "Xavf modeli"
   },
   "safety": {
     "title": "Bu vosita tashxis qoʻymaydi",
@@ -135,7 +136,8 @@
       },
       "review": "Keyingi koʻrik: {date}",
       "reviewInMonths": "{months} oydan keyin qayta koʻrik"
-    }
+    },
+    "methodLink": "Shkala qanday hisoblanadi?"
   },
   "referral": {
     "title": "Yoʻllanma",
@@ -590,7 +592,8 @@
     "exampleExplanation": "40 quti-yil chekish + mMRC 3 → yuqori ehtimollik",
     "exampleLabel": "Namuna natija (toʻqima maʼlumot)",
     "ctaDemo": "Demoni koʻrish",
-    "demoNote": "Parolsiz kirish · faqat toʻqima (haqiqiy boʻlmagan) bemorlar"
+    "demoNote": "Parolsiz kirish · faqat toʻqima (haqiqiy boʻlmagan) bemorlar",
+    "methodCta": "{max} ballik shkala qanday ishlaydi"
   },
   "designSystem": {
     "title": "Dizayn tizimi",
@@ -606,5 +609,96 @@
       "body": "Havola notoʻgʻri yoki sahifa oʻchirilgan."
     },
     "forbidden": "Bu amal uchun ruxsatingiz yoʻq."
+  },
+  "method": {
+    "metaTitle": "Xavf modeli — {max} ballik shkala",
+    "badge": "Ochiq metodika",
+    "title": "Xavf modeli: {max} ballik shkala",
+    "lead": "NafasNazorat bemorning spirometriya yoki pulmonolog koʻrigiga muhtojlik ehtimolini 9 ta omil boʻyicha 0–{max} ballda baholaydi. Har bir ball qaysi omildan kelgani natijada koʻrinadi — «qora quti» yoʻq.",
+    "version": "Model versiyasi: {version} · vaqtinchalik — ogʻirliklar mahalliy, spirometriya bilan tasdiqlangan maʼlumotlarda sozlanadi",
+    "levelsTitle": "Ball → ehtimollik darajasi",
+    "levelRange": "{min}–{max} ball",
+    "levelReview": "Keyingi koʻrik: {months} oydan keyin",
+    "factorsTitle": "Xavf omillari qanday aniqlanadi",
+    "factorsLead": "Shifokor 5 qadamli shaklda maʼlumot kiritadi, tizim har bir javobni ballga aylantiradi. Omillar GOLD 2025 hisobotidagi OSOKni gumon qilish koʻrsatkichlariga asoslangan.",
+    "groups": {
+      "ageYears": {
+        "title": "Yosh",
+        "body": "OSOK xavfi 40 yoshdan keyin keskin oshadi. Yosh toʻliq yillarda kiritiladi."
+      },
+      "packYears": {
+        "title": "Chekish — quti-yil",
+        "body": "Quti-yil = (kuniga sigaret ÷ 20) × chekilgan yillar. Masalan, kuniga 20 dona, 20 yil → 20 quti-yil. Hech chekmagan bemor — 0; avval chekkan va hozir chekayotganlar uchun hisoblanadi."
+      },
+      "biomassYears": {
+        "title": "Biomassa va uy tutuni",
+        "body": "Tezak, oʻtin, koʻmir bilan ovqat pishirish yoki isitish (tandir, oʻchoq, pechka) yillari. GOLD boʻyicha tamakidan mustaqil xavf omili."
+      },
+      "occupationalYears": {
+        "title": "Kasbiy chang, tutun, gazlar",
+        "body": "Paxta tozalash, togʻ-kon, qurilish, tekstil, payvandlash, qishloq xoʻjaligi kimyoviy moddalari bilan ishlagan yillar."
+      },
+      "symptoms": {
+        "title": "Simptomlar",
+        "body": "Surunkali yoʻtal (yil davomida kamida 3 oy), muntazam balgʻam va jismoniy zoʻriqishda hansirash — har biri «ha / yoʻq»."
+      },
+      "mmrc": {
+        "title": "mMRC hansirash shkalasi",
+        "body": "0–4 daraja: 0 — faqat ogʻir zoʻriqishda hansiraydi, 4 — kiyinishda ham hansiraydi yoki uydan chiqa olmaydi."
+      },
+      "catTotal": {
+        "title": "CAT — OSOK baholash testi",
+        "body": "8 savol × 0–5 ball = 0–40. 10 va undan yuqori — simptomlar sezilarli (GOLD 2025)."
+      }
+    },
+    "tableTitle": "Ballar jadvali",
+    "tableFactor": "Omil",
+    "tableCriterion": "Mezon",
+    "tablePoints": "Ball",
+    "tableMax": "Maks.",
+    "total": "Jami — maksimal ball",
+    "criterion": {
+      "below": "< {value}",
+      "range": "{min}–{max}",
+      "atLeast": "≥ {value}",
+      "yes": "ha",
+      "no": "yoʻq",
+      "grade": "{value}-daraja"
+    },
+    "units": {
+      "ageYears": "yosh",
+      "packYears": "quti-yil",
+      "biomassYears": "yil",
+      "occupationalYears": "yil",
+      "catTotal": "ball"
+    },
+    "rulesTitle": "Eskalatsiya qoidalari",
+    "rulesLead": "Ball yetmasa ham, quyidagi holatlarda daraja kamida koʻrsatilgan darajaga koʻtariladi (GOLD tavsiyasi):",
+    "missingTitle": "Maʼlumot yetishmasa",
+    "missingBody": "Kiritilmagan maydon 0 ball deb hisoblanadi va natijada ogohlantirish chiqadi — ball xavfni kamaytirib koʻrsatishi mumkin. Taʼsir bor-u muddati nomaʼlum boʻlsa, eng past (1 ball) daraja olinadi va bu ham ogohlantirishda koʻrsatiladi.",
+    "outputTitle": "Natija ekranida nima chiqadi",
+    "output": {
+      "1": "Ehtimollik darajasi — rang + ikon + matn (hech qachon faqat rang emas).",
+      "2": "«Nima uchun?» — eng koʻp ball bergan 3 ta omil, masalan «40 quti-yil chekish + mMRC 3».",
+      "3": "Har bir omil boʻyicha ball — masalan «Chekish: 4 / 4».",
+      "4": "Yoʻllanma tavsiyasi va keyingi koʻrik sanasi.",
+      "5": "Qoʻllanilgan qoida va yetishmagan maʼlumotlar roʻyxati."
+    },
+    "exampleTitle": "Namuna hisob (toʻqima bemor)",
+    "exampleLead": "45 yoshli ayol, hech chekmagan, 15 yil tandirda non yopgan, hansirash bor, mMRC 2, CAT 12.",
+    "exampleScore": "Ball: {score} / {max} (faqat ball boʻyicha — {level})",
+    "exampleRule": "Ball boʻyicha — {scoreLevel}, lekin eskalatsiya qoidasi darajani koʻtaradi → {level}.",
+    "sourcesTitle": "Manbalar",
+    "sources": {
+      "1": "GOLD 2025 Report — OSOKni gumon qilish koʻrsatkichlari (2-bob).",
+      "2": "Price DB va b. COPD Diagnostic Questionnaire. Chest 2006;129:1531–9.",
+      "3": "Martinez FJ va b. COPD Population Screener (COPD-PS). COPD 2008;5:85–95.",
+      "4": "Bestall JC va b. mMRC shkalasi validatsiyasi. Thorax 1999;54:581–6.",
+      "5": "Jones PW va b. COPD Assessment Test (CAT). Eur Respir J 2009;34:648–54.",
+      "6": "Quti-yil taʼrifi: Prignot J. Eur J Respir Dis 1987."
+    },
+    "sourcesNote": "Ball qiymatlari yuqoridagi soʻrovnomalar tuzilishiga asoslangan, lekin ularning ballari emas — model mahalliy maʼlumotlarda tasdiqlanadi.",
+    "ctaAssess": "Tizimda baholashni boshlash",
+    "backHome": "Bosh sahifa"
   }
 }

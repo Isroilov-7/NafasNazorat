@@ -1,6 +1,6 @@
 "use client";
 
-import { ClipboardList, LayoutDashboard, Palette, Settings, Wind } from "lucide-react";
+import { BookOpen, ClipboardList, LayoutDashboard, Palette, Settings, Wind } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
@@ -10,6 +10,7 @@ const ITEMS = [
   { href: "/dashboard", key: "dashboard", icon: LayoutDashboard, admin: false },
   { href: "/assessments/new", key: "newAssessment", icon: ClipboardList, admin: false },
   { href: "/spirometry/new", key: "spirometry", icon: Wind, admin: false },
+  { href: "/metodika", key: "method", icon: BookOpen, admin: false },
   { href: "/admin", key: "admin", icon: Settings, admin: true },
   { href: "/design-system", key: "designSystem", icon: Palette, admin: true },
 ] as const;

@@ -1,4 +1,5 @@
-import { CalendarClock, Info, ListChecks, Stethoscope } from "lucide-react";
+import { BookOpen, CalendarClock, Info, ListChecks, Stethoscope } from "lucide-react";
+import Link from "next/link";
 import { useFormatter, useTranslations } from "next-intl";
 import type { RiskContribution, RiskResult } from "@/lib/clinical";
 import { Alert } from "@/components/ui/alert";
@@ -59,7 +60,6 @@ interface RiskResultPanelProps {
  */
 export function RiskResultPanel({ result, nextReviewDate, className }: RiskResultPanelProps) {
   const t = useTranslations();
-  const phrase = useDriverPhrase();
   const rec = result.recommendation;
 
   return (
@@ -127,32 +127,48 @@ export function RiskResultPanel({ result, nextReviewDate, className }: RiskResul
           <CardTitle className="text-base">{t("assessment.result.contributions")}</CardTitle>
         </CardHeader>
         <CardContent>
-          <ul className="flex flex-col gap-3">
-            {result.contributions.map((c) => (
-              <li key={c.factor} className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-1 sm:grid-cols-[12rem_minmax(0,1fr)_5rem]">
-                <span className={cn("text-[0.9375rem]", c.points > 0 ? "font-medium text-foreground" : "text-muted-foreground")}>
-                  {t(`risk.factorNames.${c.factor}`)}
-                  {c.points > 0 ? <span className="block text-sm font-normal text-muted-foreground">{phrase(c)}</span> : null}
-                </span>
-                <span className="tabular text-right text-sm text-muted-foreground sm:order-last">
-                  {c.points} / {c.maxPoints}
-                </span>
-                <span className="col-span-2 h-2 overflow-hidden rounded-full bg-surface-muted sm:col-span-1" aria-hidden="true">
-                  <span
-                    className={cn("block h-full rounded-full", c.points > 0 ? "bg-primary" : "bg-transparent")}
-                    style={{ width: `${c.maxPoints ? (c.points / c.maxPoints) * 100 : 0}%` }}
-                  />
-                </span>
-              </li>
-            ))}
-          </ul>
-          <p className="mt-4 flex items-start gap-2 text-sm text-muted-foreground">
-            <Info className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
-            {t("safety.provisionalModel", { version: result.configVersion })}
-          </p>
+          <RiskFactorBreakdown result={result} />
         </CardContent>
       </Card>
     </div>
   );
 }
 
+/**
+ * Every factor of the 19-point scale with its points (e.g. "Chekish 4 / 4") + link to the public
+ * methodology. Shared by the result screen and the patient card, so both show the full risk factors.
+ */
+export function RiskFactorBreakdown({ result, className }: { result: RiskResult; className?: string }) {
+  const t = useTranslations();
+  const phrase = useDriverPhrase();
+  return (
+    <div className={className}>
+      <ul className="flex flex-col gap-3">
+        {result.contributions.map((c) => (
+          <li key={c.factor} className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-1 sm:grid-cols-[12rem_minmax(0,1fr)_5rem]">
+            <span className={cn("text-[0.9375rem]", c.points > 0 ? "font-medium text-foreground" : "text-muted-foreground")}>
+              {t(`risk.factorNames.${c.factor}`)}
+              {c.points > 0 ? <span className="block text-sm font-normal text-muted-foreground">{phrase(c)}</span> : null}
+            </span>
+            <span className="tabular text-right text-sm text-muted-foreground sm:order-last">
+              {c.points} / {c.maxPoints}
+            </span>
+            <span className="col-span-2 h-2 overflow-hidden rounded-full bg-surface-muted sm:col-span-1" aria-hidden="true">
+              <span
+                className={cn("block h-full rounded-full", c.points > 0 ? "bg-primary" : "bg-transparent")}
+                style={{ width: `${c.maxPoints ? (c.points / c.maxPoints) * 100 : 0}%` }}
+              />
+            </span>
+          </li>
+        ))}
+      </ul>
+      <p className="mt-4 flex items-start gap-2 text-sm text-muted-foreground">
+        <Info className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
+        {t("safety.provisionalModel", { version: result.configVersion })}
+      </p>
+      <Link href="/metodika" className="mt-2 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-primary underline-offset-4 hover:underline">
+        <BookOpen className="size-4" aria-hidden="true" /> {t("risk.methodLink")}
+      </Link>
+    </div>
+  );
+}

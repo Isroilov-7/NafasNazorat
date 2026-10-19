@@ -1,4 +1,4 @@
-import { ArrowRight, BarChart3, ClipboardList, Database, ShieldCheck, Stethoscope, Wind } from "lucide-react";
+import { ArrowRight, BarChart3, BookOpen, ClipboardList, Database, ShieldCheck, Stethoscope, Wind } from "lucide-react";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { Suspense } from "react";
@@ -6,6 +6,7 @@ import { connection } from "next/server";
 import { DemoLoginButton } from "@/components/app/demo-login-button";
 import { Logo } from "@/components/app/logo";
 import { demoDoctorEmail } from "@/lib/server/demo";
+import { describeRiskScale } from "@/lib/clinical";
 import { RiskBadge } from "@/components/clinical/risk-badge";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -102,6 +103,11 @@ export default async function LandingPage() {
                 </li>
               ))}
             </ol>
+            <Button variant="outline" className="mt-8" asChild>
+              <Link href="/metodika">
+                <BookOpen /> {t("landing.methodCta", { max: describeRiskScale().maxScore })} <ArrowRight />
+              </Link>
+            </Button>
           </div>
         </section>
 
